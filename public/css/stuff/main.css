@@ -1,0 +1,44 @@
+.kategori-stuff{
+    top: 10px;
+    left: 10px;
+    position: absolute;
+}
+
+.detail-hover{
+    bottom: 12px;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%) translateY(40%);
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.card:hover .detail-hover {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.detail-hover:hover{
+    background-color: #000000;
+    border: none;
+    color: white;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-content.open {
+  max-height: 500px; /* cukup besar biar muat isi */
+  padding-top: 0.5rem;
+}
+
+.accordion-btn i {
+  transition: transform 0.3s ease;
+}
+
+.accordion-btn.active i {
+  transform: rotate(90deg);
+}

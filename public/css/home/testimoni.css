@@ -1,0 +1,11 @@
+#section-testimoni > .row {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 1rem;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* cukup -50%, jangan -100% */
+}
