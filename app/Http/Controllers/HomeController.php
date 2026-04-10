@@ -18,7 +18,7 @@ class HomeController
 
             $client = Client::latest()->get();
             $testimoni = Testimoni::latest()->get();
-            $galleries = Galeri::latest()->take(9)->get();
+            $galleries = Galeri::latest()->limit(2)->get();
             $count = $galleries->count();
 
             return compact('kategori', 'client', 'testimoni', 'galleries', 'count');
@@ -28,7 +28,7 @@ class HomeController
     }
 
     public function galeri(){
-        $galleries = Galeri::latest()->limit(2)->get();
+        $galleries = Galeri::latest()->get();
 
         return view('user.home.galeri.list', compact('galleries'));
     }
