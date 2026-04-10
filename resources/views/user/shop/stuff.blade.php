@@ -3,10 +3,17 @@
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/stuff/main.css') }}">
 
-    <div class="container">
+    <div class="container" style="min-height: 57.4dvh">
         <div class="row align-items-center my-4">
             <div class="col-md-4 col-sm-12">
-                <h5 class="text-muted m-0"><a href="{{ route('home') }}" class="text-decoration-none text-muted">Halaman Utama</a> / <span class="text-black">Peralatan</span></h5>
+                <h5 class="text-muted m-0">
+                    <a href="{{ route('home') }}" class="text-decoration-none text-muted">Halaman Utama</a> /
+                    @if(request('kategori'))
+                        <span class="text-black">{{ request('kategori') }}</span>
+                    @else
+                        <span class="text-black">Peralatan</span>
+                    @endif
+                </h5>
             </div>
             <div class="col-md-8 col-sm-12">
                 <form action="{{ route('homeProduct') }}" method="GET">
@@ -49,7 +56,7 @@
                     </div>
 
                     <div class="row mt-3 p-0">
-                        @foreach ($produk as $data)
+                        @forelse ($produk as $data)
                         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                             <div class="card h-100 shadow-sm border-0 rounded-3">
                                 <!-- Gambar Produk -->
@@ -87,8 +94,14 @@
                                 </div>
                             </div>
                         </div>
-
-                        @endforeach
+                        @empty
+                        <div class="col-12">
+                            <div class="alert alert-warning text-center" role="alert">
+                                <i class="fa-solid fa-triangle-exclamation fa-lg me-2"></i>
+                                Maaf, tidak ada alat yang ditemukan.
+                            </div>
+                        </div>
+                        @endforelse
                     </div>
                 </div>
             </div>

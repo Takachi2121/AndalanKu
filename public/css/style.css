@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-:root{
-    --primary-color: #A20909;
+:root {
+    --primary-color: #a20909;
     --secondary-color: #141419;
-    --base-color: #FFFFFF;
+    --base-color: #ffffff;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
 }
 
-html{
+html {
     box-sizing: border-box;
     overflow-x: clip;
     scroll-behavior: smooth;
@@ -21,23 +21,23 @@ html{
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins";
-  background: #f8f8f8;
-  overflow-x: clip;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+    background: #f8f8f8;
+    overflow-x: clip;
 }
 
-header{
-    position:sticky;
-    top:0;
+header {
+    position: sticky;
+    top: 0;
     background-color: var(--base-color);
     z-index: 1000;
     width: 100%;
 }
 
-.header-kategori{
+.header-kategori {
     background-color: var(--primary-color);
     color: white;
     font-weight: 600;
@@ -46,7 +46,7 @@ header{
     border-radius: 5px;
 }
 
-.header-kategori:hover{
+.header-kategori:hover {
     transform: rotate(360deg);
 }
 
@@ -108,68 +108,68 @@ header{
 }
 
 @media (max-width: 767px) {
-  .category-dropdown {
-    width: 100vw;
-    left: -210px;
-    right: 0;
-    border-radius: 0;
-  }
+    .category-dropdown {
+        width: 100vw;
+        left: -210px;
+        right: 0;
+        border-radius: 0;
+    }
 
-  .category-dropdown.show {
-    transform: translateY(0);
-  }
+    .category-dropdown.show {
+        transform: translateY(0);
+    }
 }
 
 .whatsapp-wrapper {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
 }
 
 .whatsapp-wrapper2 {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  z-index: 9999;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 9999;
 }
 
 .whatsapp-float {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #25D366;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 50px;
-  padding: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  overflow: hidden;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-  width: 50px; /* awal hanya bulat icon */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #25d366;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    width: 50px; /* awal hanya bulat icon */
 }
 
 .whatsapp-float i {
-  font-size: 24px;
-  min-width: 24px;
-  text-align: center;
+    font-size: 24px;
+    min-width: 24px;
+    text-align: center;
 }
 
 .whatsapp-float .text {
-  opacity: 0;
-  max-width: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .whatsapp-float:hover {
-  width: 250px; /* melebar saat hover */
-  padding: 12px 20px;
+    width: 250px; /* melebar saat hover */
+    padding: 12px 20px;
 }
 
 .whatsapp-float:hover .text {
-  opacity: 1;
-  max-width: 180px;
+    opacity: 1;
+    max-width: 180px;
 }

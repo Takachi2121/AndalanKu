@@ -41,20 +41,11 @@
     @include('user.component.footer')
 
     <div class="whatsapp-wrapper">
-        <a href="https://api.whatsapp.com/send?phone=6285233899868&text=Halo%20kak,%20saya%20mau%20tanya%20apakah%20alat%20lighting%20ini%20masih%20tersedia%3F"
+        <a href="https://api.whatsapp.com/send?phone=6281617551747&text=Halo%20kak,%20saya%20mau%20tanya%20apakah%20alat%20lighting%20ini%20masih%20tersedia%3F"
             target="_blank"
             class="whatsapp-float">
             <i class="fa-brands fa-whatsapp"></i>
-            <span class="text">Customer Service 2</span>
-        </a>
-    </div>
-
-    <div class="whatsapp-wrapper2">
-        <a href="https://api.whatsapp.com/send?phone=6285233899868&text=Halo%20kak,%20saya%20mau%20tanya%20apakah%20alat%20lighting%20ini%20masih%20tersedia%3F"
-            target="_blank"
-            class="whatsapp-float">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span class="text">Customer Service 1</span>
+            <span class="text">Customer Service</span>
         </a>
     </div>
 

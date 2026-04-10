@@ -18,7 +18,7 @@
             @foreach($kategori as $data)
             <div class="col-lg-2 col-md-3 col-sm-4 col-6" data-aos="zoom-in" data-aos-delay="{{ $delay }}" data-aos-duration="500" data-aos-once="true">
                 <a href="{{ route('homeProduct', ['kategori' => $data->nama_kategori]) }}" class="text-decoration-none text-black" title="{{ $data->nama_kategori }}) }}">
-                    <div class="border border-1 category-card p-2">
+                    <div class="border-1 category-card p-2">
                         <div class="text-center py-2 px-1">
                             <img src="{{ asset('img/data/kategori/' . $data->thumbnail) }}" alt="{{ $data->nama_kategori }}" class="img-fluid mb-3">
                             <h5 class="fs-6 fw-semibold">{{ $data->nama_kategori }}</h5>

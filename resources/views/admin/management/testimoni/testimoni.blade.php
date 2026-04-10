@@ -58,6 +58,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $testimoni->nama_client }}</td>
                         <td>{{ $testimoni->nama_perusahaan }}</td>
+                        <td>{{ Str::limit($testimoni->testimoni, 40) }}</td>
                         <td>
                             @if ($testimoni->profile)
                                 <img src="{{ asset('img/data/testimoni/' . $testimoni->profile) }}" loading="lazy" height="80" width="80" class="me-3" alt="Foto Testimoni">
@@ -65,7 +66,6 @@
                                 <img src="{{ asset('img/index/Testimoni.png') }}" loading="lazy" height="80" width="80" class="me-3" alt="Foto Testimoni">
                             @endif
                         </td>
-                        <td>{{ Str::limit($testimoni->testimoni, 40) }}</td>
                         <td>
                             <div class="d-flex gap-2">
                                 <a href="{{ route('editTestimoni', $testimoni->id) }}" class="btn btn-sm btn-primary">

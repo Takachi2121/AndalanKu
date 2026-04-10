@@ -13,25 +13,27 @@ use Illuminate\Support\Facades\Cache;
 class HomeController
 {
     public function index(){
-        $kategori = Kategori::all()->sortByDesc('created_at')->take(10);
-        $kategoriAll = Kategori::all()->sortByDesc('created_at');
-        $client = Client::all()->sortByDesc('created_at');
-        $testimoni = Testimoni::all()->sortByDesc('created_at');
-        $galleries = Galeri::all()->sortByDesc('created_at')->take(9);
-        $count = count($galleries);
+        $data = Cache::remember('home_data', 60, function () {
+            $kategori = Kategori::latest()->take(10)->get();
 
-        return view('user.home.home', compact('kategori', 'kategoriAll', 'client', 'testimoni', 'galleries', 'count'));
+            $client = Client::latest()->get();
+            $testimoni = Testimoni::latest()->get();
+            $galleries = Galeri::latest()->take(9)->get();
+            $count = $galleries->count();
+
+            return compact('kategori', 'client', 'testimoni', 'galleries', 'count');
+        });
+
+        return view('user.home.home', $data);
     }
 
     public function galeri(){
-        $kategoriAll = Kategori::all()->sortByDesc('created_at');
-        $galleries = Galeri::all()->sortByDesc('created_at');
+        $galleries = Galeri::latest()->limit(2)->get();
 
-        return view('user.home.galeri.list', compact('kategoriAll','galleries'));
+        return view('user.home.galeri.list', compact('galleries'));
     }
 
     public function product(Request $request){
-        $kategoriAll = Kategori::all()->sortByDesc('created_at');
         $query = Produk::query();
 
         if ($request->has('kategori')) {
@@ -75,22 +77,17 @@ class HomeController
 
         // Eksekusi query dan urutkan berdasarkan created_at descending
         $produk = $query->orderByDesc('created_at')->get();
-        $data = Produk::all()->count();
+        $data = Produk::count();
 
-        return view('user.shop.stuff', compact('kategoriAll', 'produk', 'data'));
+        return view('user.shop.stuff', compact( 'produk', 'data'));
     }
 
     public function detail(Request $request, $id)
     {
-        $kategoriAll = Kategori::all()->sortByDesc('created_at');
         $produk = Produk::findOrFail($id);
-        $rekomendasi = Produk::where('kategori_id', $produk->kategori_id)
-                        ->where('id', '!=', $produk->id)
-                        ->latest()
-                        ->take(4)
-                        ->get();
+        $rekomendasi = Produk::rekomendasi($produk)->take(4)->get();
 
-        return view('user.shop.detail', compact('kategoriAll', 'produk', 'rekomendasi'));
+        return view('user.shop.detail', compact( 'produk', 'rekomendasi'));
     }
 
 }

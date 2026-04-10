@@ -7,7 +7,7 @@
                      style="object-fit: cover; max-width: 250px;">
                 <br>
                 <p class="fw-light text-white">
-                    Jln. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod Alamat.
+                    Jl. Caman Raya, Jakasampurna, Kec. Bekasi Bar., Kota Bks, Jawa Barat
                 </p>
             </div>
         <div class="col-lg-2 col-md-6 col-12 d-flex mb-sm-3 flex-column pt-2 d-flex flex-column gap-3">

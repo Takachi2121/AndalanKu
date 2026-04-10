@@ -9,12 +9,10 @@ use Illuminate\Notifications\Notifiable;
 class Kategori extends Model
 {
     use Notifiable, HasFactory;
-
     protected $fillable = [
         'nama_kategori',
         'thumbnail',
     ];
-
     public function produk()
     {
         return $this->hasMany(Produk::class);

@@ -18,8 +18,17 @@ class Produk extends Model
         'gambar',
     ];
 
+    protected $with = ['kategori'];
+
     public function kategori()
     {
         return $this->belongsTo(Kategori::class);
+    }
+
+    public function scopeRekomendasi($query, $produk)
+    {
+        return $query->where('kategori_id', $produk->kategori_id)
+                     ->where('id', '!=', $produk->id)
+                     ->latest();
     }
 }
