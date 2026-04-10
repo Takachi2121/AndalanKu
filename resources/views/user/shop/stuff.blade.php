@@ -79,18 +79,18 @@
 
                                 <!-- Body Card -->
                                 <div class="card-body text-center">
-                                <!-- Nama Produk -->
-                                <h5 class="fw-semibold text-dark mb-2">{{ $data->nama_produk }}</h5>
+                                    <!-- Nama Produk -->
+                                    <h5 class="fw-semibold text-dark mb-2">{{ $data->nama_produk }}</h5>
 
-                                <!-- Harga -->
-                                <div class="d-flex justify-content-center align-items-center gap-2 mb-2">
-                                    <span class="text-muted text-decoration-line-through fw-semibold">
-                                    Rp {{ number_format($data->harga + 100000, 0, ',', '.') }}
-                                    </span>
-                                    <span class="text-danger fs-5 fw-bold">
-                                    Rp {{ number_format($data->harga, 0, ',', '.') }}
-                                    </span>
-                                </div>
+                                    <!-- Harga -->
+                                    <div class="d-flex justify-content-center align-items-center gap-2 mb-2">
+                                        <span class="text-muted text-decoration-line-through fw-semibold">
+                                        Rp {{ number_format($data->harga + 100000, 0, ',', '.') }}
+                                        </span>
+                                        <span class="text-danger fs-5 fw-bold">
+                                        Rp {{ number_format($data->harga, 0, ',', '.') }}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
