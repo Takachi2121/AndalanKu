@@ -76,7 +76,7 @@ class HomeController
         }
 
         // Eksekusi query dan urutkan berdasarkan created_at descending
-        $produk = $query->latest()->paginate(6)->get();
+        $produk = $query->latest()->paginate(6);
         $data = Produk::count();
 
         return view('user.shop.stuff', compact( 'produk', 'data'));

@@ -41,7 +41,7 @@
     }
 </style>
 
-<div class="container">
+<div class="container" style="min-height: 57.4dvh">
     <div class="row align-items-center my-4">
         <div class="col-md-4 col-sm-12">
             <h5 class="text-muted m-0">

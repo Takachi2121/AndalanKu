@@ -103,6 +103,9 @@
                         </div>
                         @endforelse
                     </div>
+                    <div class="d-flex justify-content-center">
+                        {{ $produk->links('pagination::simple-bootstrap-4') }}
+                    </div>
                 </div>
             </div>
             <div class="col-lg-3 d-flex flex-column gap-2 mb-3">
